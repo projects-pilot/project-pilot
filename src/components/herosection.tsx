@@ -4,8 +4,6 @@ import React from "react";
 import { PointerHighlight } from "@/components/ui/pointer-highlight";
 
 
-
-
 export default function HeroSection() {
     return (
         <section

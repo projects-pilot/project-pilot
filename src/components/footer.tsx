@@ -6,6 +6,9 @@ import { useState, useEffect } from "react"
 
 import Link from "next/link"
 import Image from "next/image"
+// import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme-provider";
+
 
 import {
     PhoneIcon,
@@ -16,17 +19,19 @@ import {
 } from "@heroicons/react/24/outline";
 
 
-
-
 export default function Footer() {
 
     const [mounted, setMounted] = useState(false)
+    const { theme } = useTheme();
 
     useEffect(() => {
         setMounted(true)
     }, [])
 
     if (!mounted) return null
+
+
+    // footerdark.png
 
     return (
         <footer className="w-full bg-gradient-to-br from-[#0a0015] via-[#1a0033] via-[#2d1b69] to-[#0a0015] dark:from-gray-50 dark:via-white dark:to-gray-100 text-white dark:text-gray-800 shadow-2xl border-t border-purple-400/30 dark:border-gray-300">
@@ -36,9 +41,9 @@ export default function Footer() {
                     <div className="flex flex-col items-center mb-6">
                         <div className="mb-3">
                             <Image
-                                src="/logooo.png"
+                                src={theme === "dark" ? "/fotterlight.png" : "/footerdark.png"}
                                 alt="Logo"
-                                width={300}
+                                width={150}
                                 height={80}
                                 className="h-auto w-auto object-contain"
                                 priority
@@ -56,10 +61,10 @@ export default function Footer() {
                             <div className="flex items-center justify-center space-x-2">
                                 <EnvelopeIcon className="w-4 h-4 text-purple-300 dark:text-blue-500 flex-shrink-0" />
                                 <a
-                                    href="mailto:projectpilot@gmail.com"
+                                    href="mailto:projectpilotngd@gmail.com"
                                     className="text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
                                 >
-                                    projectpilot@gmail.com
+                                    projectpilotngd@gmail.com
                                 </a>
                             </div>
                             <div className="flex items-center justify-center space-x-2">
@@ -191,49 +196,40 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Desktop Layout - Original */}
+
                 <div className="hidden sm:block">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 md:gap-8">
-                        {/* Company Info */}
-                        <div className="flex flex-col justify-between">
-                            <div>
+                        <div className="flex flex-col items-center justify-between">
+
+                            {/* Logo and tagline */}
+                            <div className="flex flex-col items-center">
                                 <div className="mb-3">
-                                    {/* <Image
-
-                                        src={theme === "dark" ? "/lighlogo.png" : "/finaldarkmode.png"}
-                                        alt="Logo"
-                                        width={80}
-                                        height={80}
-                                        className="h-24 sm:h-20 md:h-22 lg:h-24 xl:h-30 w-auto object-contain"
-                                        priority
-                                    /> */}
-
                                     <Image
-                                        src="/logooo.png"
+                                        src={theme === "dark" ? "/fotterlight.png" : "/footerdark.png"}
                                         alt="Logo"
-                                        width={50}
-                                        height={50}
+                                        width={65}
+                                        height={65}
                                         className="h-auto w-auto object-contain"
                                         priority
                                     />
                                 </div>
-                                <p className="text-purple-200 dark:text-gray-600 text-sm mb-4 text-center sm:text-left">
+                                <p className="text-purple-200 dark:text-gray-600 text-sm mb-4 text-center">
                                     Your ideas, our guidance
                                 </p>
                             </div>
 
-                            {/* Contact Info - Compact */}
-                            <div className="space-y-2">
-                                <div className="flex items-center justify-center sm:justify-start space-x-2">
+                            {/* Contact Info - also centered below */}
+                            <div className="space-y-2 flex flex-col items-center">
+                                <div className="flex items-center space-x-2">
                                     <EnvelopeIcon className="w-4 h-4 text-purple-300 dark:text-blue-500 flex-shrink-0" />
                                     <a
                                         href="mailto:projectpilot@gmail.com"
                                         className="text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
                                     >
-                                        projectpilot@gmail.com
+                                        projectpilotngd@gmail.com
                                     </a>
                                 </div>
-                                <div className="flex items-center justify-center sm:justify-start space-x-2">
+                                <div className="flex items-center space-x-2">
                                     <PhoneIcon className="w-4 h-4 text-purple-300 dark:text-blue-500 flex-shrink-0" />
                                     <a
                                         href="tel:+919380888740"
@@ -243,7 +239,9 @@ export default function Footer() {
                                     </a>
                                 </div>
                             </div>
+
                         </div>
+
 
                         {/* Navigation Links */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-4">
@@ -373,7 +371,10 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </div >
+        </footer >
     )
 }
+
+
+

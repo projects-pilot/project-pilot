@@ -142,7 +142,14 @@ export default function Home() {
   const [isMobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#e6f1ff] via-[#cadbff] to-[#ffffff] dark:from-[#0b0f1a] dark:via-[#141b2f] dark:to-[#1c1f2e]">
+    // <div className="min-h-screen bg-gradient-to-br from-[#e6f1ff] via-[#cadbff] to-[#ffffff] dark:from-[#0b0f1a] dark:via-[#141b2f] dark:to-[#1c1f2e]">
+    <div className="min-h-screen bg-gradient-to-br 
+    from-[#ddeaff] via-[#c0d4ff] to-[#f5f9ff] 
+    dark:from-[#0a0e1f] dark:via-[#151d36] dark:to-[#22263d]">
+
+
+      {/* //   <div className="min-h-screen bg-gradient-to-br 
+  // from-[#ddeaff] via-[#c0d4ff] to-[#f5f9ff]  dark:from-[#0b0f1a] dark:via-[#141b2f] dark:to-[#1c1f2e]"> */}
 
 
       <Navbar>
