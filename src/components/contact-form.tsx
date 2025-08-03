@@ -112,10 +112,6 @@ export default function ContactForm() {
                 body: JSON.stringify(payload),
             })
 
-            // if (res.status === 200) {
-            //     toast.success("Message sent successfully!")
-            //     handleCancel()
-            //     setStep(1)
             if (res.status === 200) {
                 const data = await res.json()
                 toast.success("Message sent successfully!")
