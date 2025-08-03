@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Sora';
+    src: url('/fonts/Sora-Regular.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}

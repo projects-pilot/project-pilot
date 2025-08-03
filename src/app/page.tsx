@@ -1,103 +1,208 @@
-import Image from "next/image";
+// "use client";
+
+// // import Navbar from "@/components/navbar"
+// import HeroSection from "@/components/herosection"
+// import DomainSection from "@/components/domain-section"
+// import ContactForm from "@/components/contact-form"
+// import Footer from "@/components/footer"
+
+// import {
+//   Navbar,
+//   NavBody,
+//   NavItems,
+//   NavbarLogo,
+//   NavbarButton,
+//   MobileNav,
+//   MobileNavHeader,
+//   MobileNavMenu,
+//   MobileNavToggle,
+// } from "@/components/ui/resizable-navbar"
+
+// import React, { useState } from "react";
+
+// const navItems = [
+//   { name: "HOME", link: "#home" },
+//   { name: "DOMAINS", link: "#domain" },
+//   { name: "CONTACT US", link: "#contact" },
+// ];
+
+
+
+
+// export default function Home() {
+//   const [isMobileOpen, setMobileOpen] = useState(false);
+//   return (
+//     // <div className="min-h-screen bg-gradient-to-br from-white via-purple-50/30 to-blue-50/50 dark:from-gray-900 dark:via-purple-900/20 dark:to-blue-900/30">
+
+
+
+//     // we are using this one
+//     // <div className="min-h-screen bg-gradient-to-br from-[#f5faff] via-[#e0ecff] to-[#f9f9fb] dark:from-slate-950 dark:via-blue-950 dark:to-purple-900">
+
+
+//     <div className="min-h-screen bg-gradient-to-br
+//     from-[#e6f1ff] via-[#cadbff] to-[#ffffff]
+//     dark:from-[#0b0f1a] dark:via-[#141b2f] dark:to-[#1c1f2e]">
+
+
+
+
+//       <Navbar>
+//         {/* Desktop Nav */}
+//         <NavBody>
+//           <NavbarLogo />
+//           <NavItems items={navItems} />
+//           <NavbarButton href="#contact">Book a Call</NavbarButton>
+//         </NavBody>
+
+//         {/* Mobile Nav */}
+//         <MobileNav visible>
+//           <MobileNavHeader>
+//             <NavbarLogo />
+//             <MobileNavToggle
+//               isOpen={isMobileOpen}
+//               onClick={() => setMobileOpen((prev) => !prev)}
+//             />
+//           </MobileNavHeader>
+//           <MobileNavMenu isOpen={isMobileOpen} onClose={() => setMobileOpen(false)}>
+//             {navItems.map((item, idx) => (
+//               <a
+//                 key={idx}
+//                 href={item.link}
+//                 className="text-black dark:text-white font-medium"
+//                 onClick={() => setMobileOpen(false)}
+//               >
+//                 {item.name}
+//               </a>
+//             ))}
+//             <NavbarButton href="#contact" className="mt-4">
+//               Book a Call
+//             </NavbarButton>
+//           </MobileNavMenu>
+//         </MobileNav>
+//       </Navbar>
+
+//       {/* < Navbar /> */}
+
+
+
+//       <section id="home">
+//         <HeroSection />
+//       </section>
+
+//       {/* DOMAIN SECTION */}
+//       <section id="domain" className="min-h-screen">
+//         <DomainSection />
+//       </section>
+
+//       {/* CONTACT SECTION */}
+//       <section id="contact" className="min-h-screen">
+//         <ContactForm />
+//         <Footer />
+//       </section>
+//     </div >
+//   )
+// }
+
+
+
+
+"use client"
+
+import HeroSection from "@/components/herosection"
+import DomainSection from "@/components/domain-section"
+import ContactForm from "@/components/contact-form"
+import Footer from "@/components/footer"
+import { TimelineDemo } from "@/components/timelineown"
+import { StatsSection } from "@/components/stats-section"
+
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  NavbarLogo,
+  NavbarButton,
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
+} from "@/components/ui/resizable-navbar"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { useState } from "react"
+
+
+const navItems = [
+  { name: "HOME", link: "#home" },
+  { name: "DOMAINS", link: "#domain" },
+  { name: "CONTACT US", link: "#contact" },
+]
+
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isMobileOpen, setMobileOpen] = useState(false)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#e6f1ff] via-[#cadbff] to-[#ffffff] dark:from-[#0b0f1a] dark:via-[#141b2f] dark:to-[#1c1f2e]">
+
+
+      <Navbar>
+        <NavBody>
+          <NavbarLogo />
+          <NavItems items={navItems} />
+          <div className="flex items-center space-x-2">
+            <ThemeToggle />
+            <NavbarButton href="#contact">Book a Call</NavbarButton>
+          </div>
+        </NavBody>
+
+        {/* Mobile Nav */}
+        <MobileNav>
+          <MobileNavHeader>
+            <NavbarLogo />
+            <div className="flex items-center space-x-2">
+              <ThemeToggle />
+              <MobileNavToggle isOpen={isMobileOpen} onClick={() => setMobileOpen((prev) => !prev)} />
+            </div>
+          </MobileNavHeader>
+          <MobileNavMenu isOpen={isMobileOpen} onClose={() => setMobileOpen(false)}>
+            {navItems.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.link}
+                className="text-black dark:text-white font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+            <NavbarButton href="#contact" className="mt-4 w-full font-sora font-bold text-center">
+              Book a Call
+            </NavbarButton>
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+
+      {/* Hero Section */}
+      <section id="home">
+        <HeroSection />
+      </section>
+
+      {/* Domain Section */}
+      <section id="domain" className="min-h-screen">
+        <DomainSection />
+      </section>
+
+      <section id="timeline" className="min-h-screen">
+        <TimelineDemo />
+      </section>
+
+      <StatsSection />
+
+      {/* Contact Section */}
+      <section id="contact" className="min-h-screen">
+        <ContactForm />
+        <Footer />
+      </section>
     </div>
-  );
+  )
 }
