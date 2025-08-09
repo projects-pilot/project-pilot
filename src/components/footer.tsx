@@ -73,7 +73,7 @@ export default function Footer() {
                                     href="tel:+919380888740"
                                     className="text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
                                 >
-                                    +91 93808 88740
+                                    +91 6363209176
                                 </a>
                             </div>
                         </div>
@@ -161,31 +161,10 @@ export default function Footer() {
                         </div>
 
                         {/* Additional Phone Numbers */}
-                        <div>
-                            <h4 className="text-lg font-semibold text-white dark:text-gray-900 mb-3 text-center">Get In Touch</h4>
-                            <div className="space-y-2 mb-4">
-                                <div className="flex items-start justify-center space-x-2">
-                                    <PhoneIcon className="w-4 h-4 text-purple-300 dark:text-blue-500 flex-shrink-0 mt-0.5" />
-                                    <div className="space-y-1 text-center">
-                                        <a
-                                            href="tel:+918088281469"
-                                            className="block text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
-                                        >
-                                            +91 80882 81469
-                                        </a>
-                                        <a
-                                            href="tel:+918317498525"
-                                            className="block text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
-                                        >
-                                            +91 83174 98525
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
 
                         {/* Copyright */}
-                        <div className="mt-4 text-center">
+                        <div className="mt-2 text-center">
                             <p className="text-purple-200 dark:text-gray-600 text-sm">
                                 © {new Date().getFullYear()} Project Pilot. All rights reserved.
                             </p>
@@ -235,7 +214,7 @@ export default function Footer() {
                                         href="tel:+919380888740"
                                         className="text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
                                     >
-                                        +91 93808 88740
+                                        +91 6363209176
                                     </a>
                                 </div>
                             </div>
@@ -331,47 +310,19 @@ export default function Footer() {
                         </div>
 
                         {/* Contact & Additional Info */}
-                        <div className="flex flex-col justify-between">
-                            <div>
-                                <h4 className="text-lg font-semibold text-white dark:text-gray-900 mb-3 text-center sm:text-left">
-                                    Get In Touch
-                                </h4>
 
-                                {/* Additional Phone Numbers */}
-                                <div className="space-y-2 mb-4">
-                                    <div className="flex items-start justify-center sm:justify-start space-x-2">
-                                        <PhoneIcon className="w-4 h-4 text-purple-300 dark:text-blue-500 flex-shrink-0 mt-0.5" />
-                                        <div className="space-y-1">
-                                            <a
-                                                href="tel:+918088281469"
-                                                className="block text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
-                                            >
-                                                +91 80882 81469
-                                            </a>
-                                            <a
-                                                href="tel:+918317498525"
-                                                className="block text-purple-200 dark:text-gray-700 hover:text-white dark:hover:text-gray-900 transition-colors text-sm"
-                                            >
-                                                +91 83174 98525
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Copyright */}
-                                <div className="mt-4">
-                                    <p className="text-purple-200 dark:text-gray-600 text-sm text-center sm:text-left">
-                                        © {new Date().getFullYear()} Project Pilot. All rights reserved.
-                                    </p>
-                                    <p className="text-purple-300 dark:text-gray-500 text-xs mt-1 text-center sm:text-left">
-                                        Empowering innovation through expert guidance
-                                    </p>
-                                </div>
-                            </div>
+                        {/* Copyright */}
+                        <div className="mt-20 text-center sm:text-left">
+                            <p className="text-purple-200 dark:text-gray-600 text-sm text-center sm:text-left">
+                                © {new Date().getFullYear()} Project Pilot. All rights reserved.
+                            </p>
+                            <p className="text-purple-300 dark:text-gray-500 text-xs mt-1 text-center sm:text-left">
+                                Empowering innovation through expert guidance
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         </footer >
     )
 }
